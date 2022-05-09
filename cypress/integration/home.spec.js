@@ -1,13 +1,16 @@
+import createBody from "./factories/createBodyFactory";
+
 describe("Home page", () => {
+    beforeEach(() => {
+        cy.request("POST", "http://localhost:5000/e2e/truncate", {});
+    })
     afterEach(() => {
-        cy.request("POST", "http://localhost:5000/e2e/truncate", {})
+        cy.request("POST", "http://localhost:5000/e2e/truncate", {});
     })
 
     it("should create a recommendation given a valid youtube link", () => {
-        const recommendation = {
-            name: "Melhor eu ir",
-            youtubeLink: "https://www.youtube.com/watch?v=zKAAFsovtM4",
-        }
+        const recommendation = createBody();
+        cy.request("POST", "http://localhost:5000/e2e/seed", recommendation);
 
         cy.visit("http://localhost:3000/");
         cy.get("#name").type(recommendation.name);
@@ -20,7 +23,8 @@ describe("Home page", () => {
     })
 
     it("should increase by one the recommendation score", () => {
-        cy.request("POST", "http://localhost:5000/e2e/seed", {})
+        const recommendation = createBody();
+        cy.request("POST", "http://localhost:5000/e2e/seed", recommendation);
 
         cy.visit("http://localhost:3000/");
         cy.intercept("GET", `http://localhost:5000/recommendations`).as("getRecommendations");
@@ -31,7 +35,8 @@ describe("Home page", () => {
     })
 
     it("should decrease by one the recommendation score", () => {
-        cy.request("POST", "http://localhost:5000/e2e/seed", {})
+        const recommendation = createBody();
+        cy.request("POST", "http://localhost:5000/e2e/seed", recommendation);
         
         cy.visit("http://localhost:3000/");
         cy.intercept("GET", `http://localhost:5000/recommendations`).as("getRecommendations");
