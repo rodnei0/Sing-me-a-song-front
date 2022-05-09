@@ -6,26 +6,26 @@ import { HiTrendingUp } from "react-icons/hi";
 import { FiShuffle } from "react-icons/fi";
 
 export default function Menu() {
-  const navigate = useNavigate();
+    const navigate = useNavigate();
 
-  return (
-    <StyledMenu>
-      <MenuItem onClick={() => navigate("/")}>
-        <FaHome />
+    return (
+        <StyledMenu>
+            <MenuItem onClick={() => navigate("/")}>
+                <FaHome />
         Home
-      </MenuItem>
+            </MenuItem>
 
-      <MenuItem onClick={() => navigate("/top")}>
-        <HiTrendingUp />
+            <MenuItem onClick={() => navigate("/top")}>
+                <HiTrendingUp />
         Top
-      </MenuItem>
+            </MenuItem>
 
-      <MenuItem onClick={() => navigate("/random")}>
-        <FiShuffle />
+            <MenuItem onClick={() => navigate("/random")}>
+                <FiShuffle />
         Random
-      </MenuItem>
-    </StyledMenu>
-  )
+            </MenuItem>
+        </StyledMenu>
+    );
 }
 
 const StyledMenu = styled.div`
