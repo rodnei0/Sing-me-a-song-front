@@ -5,10 +5,10 @@
 Have you ever asked anyone for a song recommendation? Sing me a song is an anonymous song recommendation app, the more people like a recommendation, the more likely it is to be recommended to others.
 
 <p align="center">
-  <image src="https://github.com/rodnei0/MyWallet/blob/main/src/mywallet.gif" />
+  <image src="https://github.com/rodnei0/Sing-me-a-song-front/blob/main/src/assets/images/singmeasong.gif" />
 </p>
 <p align="center">
-  Availabe at https://my-wallet-rodnei0.vercel.app/
+  Availabe at **
 </p>
 
 ## Technologies
@@ -23,7 +23,7 @@ Have you ever asked anyone for a song recommendation? Sing me a song is an anony
 
 ## How to run
 
-Availabe at https://my-wallet-rodnei0.vercel.app/
+Availabe at **
 
 OR
 
